@@ -1,18 +1,14 @@
 const path = require("path");
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
   entry: {
-    main: path.resolve(__dirname, './js/dashboard_main.js'),
+    main: path.resolve(__dirname, "./js/dashboard_main.js"),
   },
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "public"),
   },
-  performance: {
-		maxAssetSize: 1000000,
-    maxEntrypointSize: 1000000,
-	},
   module: {
     rules: [
       {
@@ -21,18 +17,11 @@ module.exports = {
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
-        use: [
-          'file-loader',
-					{
-						loader: 'image-webpack-loader',
-						options: {
-							bypassOnDebug: true,
-							disable: true,
-						},
-					},
-				],
+        type: "asset/resource",
       },
-    ]
-  }
+    ],
+  },
+  performance: {
+    maxAssetSize: 1048576,
+  },
 };
