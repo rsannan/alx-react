@@ -8,7 +8,7 @@ import showNotification from "./Notifications.";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <div>{showNotification()}</div>
+    {showNotification()}
     <App />
   </React.StrictMode>
 );
