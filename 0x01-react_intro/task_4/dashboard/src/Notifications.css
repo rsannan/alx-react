@@ -1,0 +1,12 @@
+.root-notifications {
+  border: dashed 2px red;
+  padding: auto;
+  position: relative;
+}
+li {
+  color: red;
+}
+
+li[data="default"] {
+  color: blue;
+}
