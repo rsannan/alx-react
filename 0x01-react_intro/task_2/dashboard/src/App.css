@@ -27,6 +27,7 @@
   padding: calc(var(--padding) * 2);
   border-bottom: var(--border-bottom);
   height: 45%;
+  font-weight: bold;
 }
 
 .App-footer {
@@ -36,6 +37,6 @@
   font-style: italic;
 }
 
-.App-body p {
-  font-weight: bold;
+input {
+  margin-right: 20px;
 }
