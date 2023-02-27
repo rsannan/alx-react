@@ -4,9 +4,8 @@ import { getLatestNotification } from '../utils/utils';
 import closeIcon from '../assets/close-icon.png';
 import NotificationItem from './NotificationItem';
 import PropeTypes from 'prop-types';
-import NotificationItemShape from './NotificationItemShape';
 
-function Notifications({ displayDrawer, listNotifications }) {
+function Notifications({ displayDrawer }) {
   return (
     <>
       <div className='menuItem'>
@@ -33,27 +32,17 @@ function Notifications({ displayDrawer, listNotifications }) {
             >
               <img src={closeIcon} alt="close icon" width="15px" />
             </button>
-            {
-              listNotifications.length != 0 ?
-                <p>Here is the list of notifications</p>
-              : null
-            }
+            <p>Here is the list of notifications</p>
             <ul>
-              {
-                listNotifications.length == 0 ?
-                  <NotificationItem type="default" value="No new notification for now" />
-                : null
-              }
-              {
-                listNotifications.map((val, idx)=> {
-                  return <NotificationItem
-                  type={val.type}
-                  value={val.value}
-                  html={val.html}
-                  key={val.id}
-                />
-                })
-              }
+              <NotificationItem type="default" value="New course available">
+              </NotificationItem>
+              <NotificationItem type="urgent" value="New resume available">
+              </NotificationItem>
+              <NotificationItem
+                type="urgent"
+                html={{__html: getLatestNotification()}}
+              >
+              </NotificationItem>
             </ul>
           </div>
         :
@@ -65,13 +54,11 @@ function Notifications({ displayDrawer, listNotifications }) {
 };
 
 Notifications.defaultProps = {
-  displayDrawer: false,
-  listNotifications: []
+  displayDrawer: false
 };
 
 Notifications.propTypes = {
-  displayDrawer: PropeTypes.bool,
-  listNotifications: PropeTypes.arrayOf(NotificationItemShape)
+  displayDrawer: PropeTypes.bool
 };
 
 export default Notifications;
