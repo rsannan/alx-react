@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./BodySectionWithMarginBottom.css";
 
 class BodySection extends React.Component() {
   render() {
@@ -13,10 +14,11 @@ class BodySection extends React.Component() {
 }
 
 BodySection.defaultProps = {
-  children: <React.Fragment></React.Fragment>,
+  children: <React.Fragment />,
 };
 
-BodySection.protoTypes = {
+BodySection.propTypes = {
   title: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 export default BodySection;
