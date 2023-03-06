@@ -1,5 +1,5 @@
-import { getFooterCopy, getFullYear, getLatestNotification } from './utils';
-import { StyleSheetTestUtils } from 'aphrodite';
+import { getFooterCopy, getFullYear, getLatestNotification } from "./utils";
+import { StyleSheetTestUtils } from "aphrodite";
 
 describe("Utils functions", () => {
   beforeEach(() => {
@@ -7,7 +7,7 @@ describe("Utils functions", () => {
   });
 
   test("getFullYear returns the correct year", () => {
-    expect(getFullYear()).toEqual(2022);
+    expect(getFullYear()).toEqual(2023);
   });
 
   test("getFooterCopy returns the correct string when the argument is true", () => {
@@ -19,7 +19,8 @@ describe("Utils functions", () => {
   });
 
   test("getLatestNotification returns the expected string", () => {
-    expect(getLatestNotification()).toEqual("<strong>Urgent requirement</strong> - complete by EOD");
+    expect(getLatestNotification()).toEqual(
+      "<strong>Urgent requirement</strong> - complete by EOD"
+    );
   });
-
 });
