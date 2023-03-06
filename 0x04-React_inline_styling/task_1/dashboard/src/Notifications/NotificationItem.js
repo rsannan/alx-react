@@ -17,7 +17,7 @@ class NotificationItem extends React.PureComponent {
       <li
       data-notification-type={this.props.type}
       dangerouslySetInnerHTML={this.props.html}
-      onClick={() => {console.log('empty func');}}
+      onClick={() => this.props.markAsRead(this.props.id)}
       ></li>
     );
   }
@@ -25,7 +25,7 @@ class NotificationItem extends React.PureComponent {
 
 NotificationItem.defaultProps = {
   type: 'default',
-  markAsRead: () => {console.log('empty func');},
+  markAsRead: () => {},
 	id: 0
 };
 

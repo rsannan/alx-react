@@ -1,12 +1,14 @@
-import React from "react";
-import Header from "./Header";
-import { shallow } from "enzyme";
-import { StyleSheetTestUtils } from "aphrodite";
+import React from 'react';
+import Header from './Header';
+import { shallow } from 'enzyme';
+import { StyleSheetTestUtils } from 'aphrodite';
 
-describe("Testing <Header /> Component", () => {
+
+describe('Testing <Header /> Component', () => {
   let wrapper;
 
   beforeEach(() => {
+    StyleSheetTestUtils.suppressStyleInjection();
     wrapper = shallow(<Header />);
   });
 
@@ -15,10 +17,10 @@ describe("Testing <Header /> Component", () => {
   });
 
   it("Render an h1 tag", () => {
-    expect(wrapper.find("h1")).toBeDefined();
+    expect(wrapper.find('h1')).toBeDefined();
   });
 
   it("Render an img tag", () => {
-    expect(wrapper.find("img")).toBeDefined();
+    expect(wrapper.find('img')).toBeDefined();
   });
 });
