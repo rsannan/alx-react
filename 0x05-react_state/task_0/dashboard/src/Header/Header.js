@@ -13,7 +13,8 @@ function Header() {
 
 const headerStyles = StyleSheet.create({
 	h1: {
-		marginLeft: '3rem',
+		marginLeft: '10rem',
+    float: 'right',
     flex: 2,
     '@media (max-width: 900px)': {
       margin: 'auto'
@@ -26,7 +27,7 @@ const headerStyles = StyleSheet.create({
 		alignItems: 'center',
 		color: '#E11D3F',
 		borderBottom: '1px solid #E11D3F',
-    maxWidth: '100vw',
+    width: '100%',
     boxSizing: 'border-box'
 	},
 
