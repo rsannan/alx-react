@@ -8,4 +8,4 @@ function getImmutableObject(object) {
   return transform;
 }
 
-export default getImmutableObject;
+module.exports = { getImmutableObject };
