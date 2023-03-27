@@ -14,14 +14,14 @@ export default function courseReducer(state = defaultState, action) {
 
     case SELECT_COURSE:
       return state
-        .filter((course) => course.id === action.data.index)
+        .filter((course) => course.id === action.index)
         .map((course) => {
           return { ...course, isSelected: true };
         });
 
     case UNSELECT_COURSE:
       return state
-        .filter((course) => course.id === action.data.index)
+        .filter((course) => course.id === action.index)
         .map((course) => {
           return { ...course, isSelected: false };
         });
